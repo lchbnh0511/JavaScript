@@ -17,11 +17,13 @@
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
+            <option value="4">4</option>
         </select><br><br>
         Summary :
         <input type="text" id="sum" value=""></input> <br><br>
-        <input type="button" onclick="functionOK()" value="OK"></input>
+        <input  type="button" onclick="functionOK()" value="OK"></input>
         <input type="button" onclick="functionCancle()" value="Cancle"></input>
+        <p id="kq"></p>
     </form>
     <script>
         function functionOK(){
@@ -31,17 +33,42 @@
             var value = y[y.selectedIndex].value;
             var result;
             if(value==1){
-                result = ((hk1+(hk2*3))/3);
+                result = ((hk1+hk2)/2);
             }
             else if(value==2){
-                result = ((hk1+(hk2*3))/4);
+                result = ((hk1+(hk2*2))/3);
             }
             else if(value==3){
+                result = ((hk1+(hk2*3))/4);
+            }
+            else if(value==4){
                 result = ((hk1+(hk2*4))/5);
             }
             document.getElementById("sum").value=result;
             
-
+            if(result >= 9 && result <= 10){
+                document.getElementById("kq").innerHTML = "Xuất sắc"
+                document.getElementById("kq").style.color = "re d"
+            }
+            else if(result >= 8 && result <= 10){
+                document.getElementById("kq").innerHTML = "Gioi"
+                document.getElementById("kq").style.color = "blue"
+            }
+            else if(result >= 6.5 && result < 8){
+                document.getElementById("kq").innerHTML = "Kha"
+                document.getElementById("kq").style.color = "yellow"
+            }
+            else if(result < 6.5 && result >= 5){
+                document.getElementById("kq").innerHTML = "Trung binh"
+                document.getElementById("kq").style.color = "brown"
+            }
+            else if(result < 5 && result >= 0){
+                document.getElementById("kq").innerHTML = "Yếu"
+                document.getElementById("kq").style.color = "green"
+            }
+            else{
+                document.getElementById("kq").innerHTML = "KHÔNG HỢP LỆ !"
+            }
 
         }
         function functionCancle(){
