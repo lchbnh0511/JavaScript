@@ -40,14 +40,14 @@ var woment = [
         id:3,
         name: "Váy Tay Bồng Cúp Ngực",
         code: "EC203",
-        price: "400.000",
+        price: "450.000",
         image: "https://bizweb.dktcdn.net/100/438/408/products/vay-dam-nu-van6146-tra-1-yodyvn.jpg"
     },
     
 ];
 function listProducts(){
     for(let i = 0; i <= man.length-1; i++){
-        var demo = '<div class = "col-3">';   
+        var demo = '<div class = "col-3">';
         demo += '<div class="card" style="width: 18rem; ">';
         demo += '<img src="'+man[i].image +'" class = "card-img-top" style="height:400px;">';
         demo += '<div class="card-body">';
